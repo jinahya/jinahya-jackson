@@ -47,24 +47,13 @@
     <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
     <maven.javadoc.failOnError>false</maven.javadoc.failOnError> <!-- no public or protected classes found to document -->
     <version.com.fasterxml.jackson.core>2.10.0</version.com.fasterxml.jackson.core>
+    <version.com.fasterxml.jackson.javadoc>2.10</version.com.fasterxml.jackson.javadoc>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
     <version.maven-surefire>3.0.0-M3</version.maven-surefire>
     <version.org.junit.jupiter>5.5.2</version.org.junit.jupiter>
     <version.org.mockito>3.1.0</version.org.mockito>
-<!--    <version.org.springframework>5.2.0.RELEASE</version.org.springframework>-->
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-<!--      <dependency>-->
-<!--        <groupId>org.springframework</groupId>-->
-<!--        <artifactId>spring-framework-bom</artifactId>-->
-<!--        <version>${version.org.springframework}</version>-->
-<!--        <type>pom</type>-->
-<!--        <scope>import</scope>-->
-<!--      </dependency>-->
-    </dependencies>
-  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -139,27 +128,11 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.reactivestreams</groupId>
-      <artifactId>reactive-streams</artifactId>
-      <version>1.0.3</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.26</version>
       <scope>provided</scope>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>org.springframework</groupId>-->
-<!--      <artifactId>spring-context</artifactId>-->
-<!--      <scope>provided</scope>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>org.springframework</groupId>-->
-<!--      <artifactId>spring-webflux</artifactId>-->
-<!--      <scope>provided</scope>-->
-<!--    </dependency>-->
   </dependencies>
 
   <build>
@@ -171,9 +144,9 @@
           <version>${version.maven-javadoc-plugin}</version>
           <configuration>
             <links>
-<!--              <link>https://docs.spring.io/spring-framework/docs/current/javadoc-api/</link>-->
-<!--              <link>https://projectreactor.io/docs/core/release/api/</link>-->
-              <link>http://www.reactive-streams.org/reactive-streams-1.0.3-javadoc/</link>
+              <link>http://fasterxml.github.io/jackson-annotations/javadoc/${version.com.fasterxml.jackson.javadoc}/</link>
+              <link>http://fasterxml.github.io/jackson-core/javadoc/${version.com.fasterxml.jackson.javadoc}/</link>
+              <link>http://fasterxml.github.io/jackson-databind/javadoc/${version.com.fasterxml.jackson.javadoc}/</link>
             </links>
           </configuration>
           <executions>
